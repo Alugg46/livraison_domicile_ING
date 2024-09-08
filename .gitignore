@@ -1,0 +1,9 @@
+**/target/
+.idea
+*.iml
+*.class
+*Test.java
+**/test/
+# 忽略所有的配置文件
+*.yml
+*.env
