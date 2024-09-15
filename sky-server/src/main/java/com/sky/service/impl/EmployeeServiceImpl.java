@@ -135,7 +135,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         //将EmployeeDTO对象属性拷贝至Employee，避免一个个属性进行赋值
         BeanUtils.copyProperties(employeeDTO,employee);
-
         employee.setUpdateTime(LocalDateTime.now());
         employee.setUpdateUser(BaseContext.getCurrentId());
 
