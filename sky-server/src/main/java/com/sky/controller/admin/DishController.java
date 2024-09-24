@@ -46,6 +46,7 @@ public class DishController {
         return Result.success(pageResult);
     }
 
+
     @DeleteMapping
     @ApiOperation("菜品批量删除")
     public Result delete(@RequestParam List<Long> ids){
@@ -73,5 +74,12 @@ public class DishController {
         log.info("修改菜品{}",dishDTO);
         dishService.updateWithFlavor(dishDTO);
         return Result.success();
+    }
+
+    @GetMapping("/list")
+    @ApiOperation("根据分类id查询菜品")
+    public Result<List<Dish>> list(Long categoryId){
+        List<Dish> list = dishService.list(categoryId);
+        return Result.success(list);
     }
 }
