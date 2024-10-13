@@ -21,7 +21,6 @@ import java.util.Map;
 @Service
 @Slf4j
 public class UserServiceImpl implements UserService {
-
     public static final String WX_LOGIN = "https://api.weixin.qq.com/sns/jscode2session";
 
     @Autowired
@@ -61,7 +60,7 @@ public class UserServiceImpl implements UserService {
         map.put("appid", weChatProperties.getAppid());
         map.put("secret",weChatProperties.getSecret());
         map.put("js_code", code);
-        map.put("grant_type", "authorizationi_code");
+        map.put("grant_type", "authorization_code");
         String json = HttpClientUtil.doGet(WX_LOGIN, map);
 
         JSONObject jsonObject = JSON.parseObject(json);
